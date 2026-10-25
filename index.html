@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="dashboard">
+        <header class="header">
+            <div>
+                <p class="eyebrow">LIVE WEATHER</p>
+                <h1>Weather Dashboard <span>🌦️</span></h1>
+                <p class="subtitle">Your city's weather, at a glance.</p>
+            </div>
+        </header>
+
+        <form id="search-form" class="search-form">
+            <input
+                type="text"
+                id="city-input"
+                placeholder="Enter a city (e.g. Chennai)"
+                aria-label="City name"
+                required
+            >
+            <button type="submit" id="search-button">
+                Search
+            </button>
+        </form>
+
+        <p id="status" class="status" role="status" aria-live="polite">
+            Search for a city to see its weather.
+        </p>
+
+        <section id="weather-content" class="weather-content" hidden>
+            <div class="weather-hero">
+                <div>
+                    <p class="eyebrow">CURRENT WEATHER</p>
+                    <h2 id="city-name">--</h2>
+                    <p id="weather-description">--</p>
+                    <p id="updated-time" class="updated-time"></p>
+                </div>
+                <div class="temperature-display">
+                    <span id="weather-icon">🌤️</span>
+                    <p><span id="temperature">--</span><sup>°C</sup></p>
+                </div>
+            </div>
+
+            <div class="metrics">
+                <article class="metric-card">
+                    <div class="metric-icon">🌡️</div>
+                    <p>Feels Like</p>
+                    <h3><span id="feels-like">--</span> °C</h3>
+                </article>
+
+                <article class="metric-card">
+                    <div class="metric-icon">💧</div>
+                    <p>Humidity</p>
+                    <h3><span id="humidity">--</span>%</h3>
+                </article>
+
+                <article class="metric-card">
+                    <div class="metric-icon">💨</div>
+                    <p>Wind Speed</p>
+                    <h3><span id="wind-speed">--</span> km/h</h3>
+                </article>
+            </div>
+        </section>
+
+        <footer>
+            Weather data powered by
+            <a href="https://open-meteo.com/" target="_blank"
+               rel="noopener noreferrer">Open-Meteo</a>
+        </footer>
+    </main>
+</body>
+</html>

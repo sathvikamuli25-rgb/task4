@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #101b3f, #243b72, #5367a5);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 16px;
+}
+
+.dashboard {
+    width: 100%;
+    max-width: 850px;
+    padding: 36px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.09);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(18px);
+}
+
+.eyebrow {
+    color: #a9c9ff;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: clamp(24px, 4vw, 36px);
+    line-height: 1.35;
+}
+
+.subtitle {
+    color: #c6d2f1;
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.search-form {
+    display: flex;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.search-form input {
+    flex: 1;
+    min-width: 0;
+    padding: 15px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 14px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.12);
+    color: white;
+    font: inherit;
+}
+
+.search-form input::placeholder {
+    color: #c5cee8;
+}
+
+.search-form input:focus {
+    border-color: #9fc4ff;
+    box-shadow: 0 0 0 3px rgba(159, 196, 255, 0.15);
+}
+
+.search-form button {
+    padding: 14px 24px;
+    border: none;
+    border-radius: 14px;
+    background: #a9c9ff;
+    color: #17254d;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.search-form button:hover {
+    background: #d0e1ff;
+    transform: translateY(-2px);
+}
+
+.search-form button:disabled {
+    opacity: 0.6;
+    cursor: wait;
+    transform: none;
+}
+
+.status {
+    margin: 20px 0;
+    color: #d4def6;
+    font-size: 14px;
+    min-height: 22px;
+}
+
+.status.error {
+    color: #ffb8bd;
+}
+
+.weather-content {
+    margin-top: 12px;
+}
+
+.weather-content[hidden] {
+    display: none;
+}
+
+.weather-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 28px;
+    border-radius: 22px;
+    background: linear-gradient(
+        120deg,
+        rgba(118, 159, 255, 0.23),
+        rgba(255, 255, 255, 0.06)
+    );
+}
+
+.weather-hero h2 {
+    font-size: clamp(25px, 5vw, 38px);
+    overflow-wrap: anywhere;
+}
+
+#weather-description {
+    color: #d6e2ff;
+    margin-top: 8px;
+    font-size: 15px;
+}
+
+.updated-time {
+    color: #b9c8e8;
+    font-size: 12px;
+    margin-top: 12px;
+}
+
+.temperature-display {
+    text-align: center;
+    flex-shrink: 0;
+}
+
+#weather-icon {
+    display: block;
+    font-size: 60px;
+    margin-bottom: 4px;
+}
+
+.temperature-display > p {
+    font-size: clamp(36px, 6vw, 52px);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.temperature-display sup {
+    font-size: 20px;
+}
+
+.metrics {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.metric-card {
+    padding: 22px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.metric-icon {
+    font-size: 28px;
+    margin-bottom: 14px;
+}
+
+.metric-card p {
+    color: #c8d5f4;
+    font-size: 13px;
+}
+
+.metric-card h3 {
+    margin-top: 8px;
+    font-size: clamp(15px, 2vw, 21px);
+    overflow-wrap: anywhere;
+}
+
+footer {
+    margin-top: 30px;
+    text-align: center;
+    color: #c4d0ed;
+    font-size: 12px;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .dashboard {
+        padding: 23px 17px;
+        border-radius: 22px;
+    }
+
+    .search-form {
+        flex-direction: column;
+    }
+
+    .search-form button {
+        width: 100%;
+    }
+
+    .weather-hero {
+        padding: 20px 15px;
+        gap: 10px;
+    }
+
+    #weather-icon {
+        font-size: 42px;
+    }
+
+    .metrics {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .metric-card {
+        display: grid;
+        grid-template-columns: 40px 1fr;
+        column-gap: 10px;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .metric-icon {
+        grid-row: span 2;
+        margin: 0;
+    }
+
+    .metric-card h3 {
+        margin-top: 4px;
+    }
+}
